@@ -1,17 +1,17 @@
 
 cinst visualstudio2019professional
-//< need to setup visual studios properly (14.1_xp for xp support etc...) - this can be done as a seperate script after all the installations
+#< need to setup visual studios properly (14.1_xp for xp support etc...) - this can be done as a seperate script after all the installations
 cinst resharper
 cinst tortoisesvn
 cinst javaruntime
 cinst nsis
-//< install Access Control Plugin
-//< install Shell Link Plugin
+#< install Access Control Plugin
+#< install Shell Link Plugin
 
 
-// installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
+# installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
 cinst python3.7 --params "/InstallDir:C\Python\Latest-64\" "/InstallDir32:C:\Python\Latest-32\"
 cinst python2.7 -- params "/InstallDir:C\Python\27"
 
-//< download/compile/install boost for both pythons installed above
+#< download/compile/install boost for both pythons installed above
 cinst boost-msvc-14.1
