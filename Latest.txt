@@ -9,8 +9,10 @@ cinst nsis
 
 
 # installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
-cinst python3 --params "/InstallDir:C\Python\Latest-64\" "/InstallDir32:C:\Python\Latest-32\"
-cinst python2 --params "/InstallDir:C\Python\27"
+cinst python3 --params "/InstallDir:C:\Python\3-Latest-64"
+cinst python3 --params "/InstallDir32:C:\Python\3-Latest-32"
+cinst python2 --params "/InstallDir:C:\Python\2-Latest-64"
+cinst python2 --params "/InstallDir32:C:\Python\2-Latest-32"
 
 cinst boost-msvc-14.1
 # TODO: this probably does not install the python dependencies
