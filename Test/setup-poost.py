@@ -1,1 +1,1 @@
-python -c print('this is python')
+print('this is python')
