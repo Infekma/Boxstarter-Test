@@ -14,3 +14,4 @@ cinst python3.7 --params "/InstallDir:C\Python\Latest-64\" "/InstallDir32:C:\Pyt
 cinst python2.7 -- params "/InstallDir:C\Python\27"
 
 //< download/compile/install boost for both pythons installed above
+cinst boost-msvc-14.1
