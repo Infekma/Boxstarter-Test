@@ -28,7 +28,7 @@ def get_b2_args(build_dir : str, output_dir : str, architecture : int):
 # build boost for the given python version by copying the base_config and adding the required python usage to the file
 def build_boost(boost_build_dir : str, boost_output_dir : str, python_version : int, python_install_dir : str, architecture : int): 
   # write the project config settings required to build boost with this python version
-  project_config = base_config;
+  project_config = base_config
   project_config += f"\nusing python : {str(python_version)} : {python_install_dir} : {python_install_dir + "/include"} : {python_install_dir + "/libs"} ;"
   f.open(f"{boost_build_dir}\project-config.jam", "w")
   f.write(project_config)
