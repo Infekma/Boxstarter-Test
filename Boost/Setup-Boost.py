@@ -1,13 +1,12 @@
-import os;
-import requests
-from subprocess import Popen
+import os
+from urllib.request import urlopen
 
 # config
 msvc_toolset = 14.1
 
 # download the base config from the github repository and store the contents to a string
 base_config_url = "https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Boost/base-config.jam"
-base_config = requests.get(base_config_url).text
+base_config = urlopen(base_config_url).read().decode('utf-8')
 
 # TODO - something must've gone wrong if empty ?
 
@@ -29,24 +28,23 @@ def get_b2_args(build_dir : str, output_dir : str, architecture : int):
 def build_boost(boost_build_dir : str, boost_output_dir : str, python_version : int, python_install_dir : str, architecture : int): 
   # write the project config settings required to build boost with this python version
   project_config = base_config
-  project_config += f"\nusing python : {str(python_version)} : {python_install_dir} : {python_install_dir + "/include"} : {python_install_dir + "/libs"} ;"
-  f.open(f"{boost_build_dir}\project-config.jam", "w")
-  f.write(project_config)
-  f.close
+  project_config += f"\nusing python : {str(python_version)} : {python_install_dir} : {python_install_dir}/include : {python_install_dir}/libs ;"
+  file = open(f"{boost_build_dir}\project-config.jam", "w")
+  file.write(project_config)
+  file.close
   
   # run b2 with the requirement args for this boost python build
   b2_args = get_b2_args(boost_build_dir, boost_output_dir, architecture)
   os.system(b2_args)
   
-    
 # script actions:
 # 1. run bootstrap.bat - builds b2.exe
 # 2. run b2.exe to build boost
 # 3. set environmental variable for "BOOST_ROOT_DIR" to point to the boost_output_dir
 
 # TODO: customizable input/output ?
-build_dir = "C:\boost_build"
-output_dir = "C:\boost"
+build_dir = r"C:\boost_build"
+output_dir = r"C:\boost"
 
 # how to run bat from python: https://stackoverflow.com/questions/1818774/executing-a-subprocess-fails
 # run the bootstrap.bat to build the b2 executable
