@@ -10,8 +10,8 @@
 # cinst boost-msvc-14.1 --dir "C:\boost_build"
 
 # installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
-cinst python3 --params '"/InstallDir:C:\Python\37-64 /InstallDir32:C:\Python\37-32"' --version 3.7
-cinst python2 --params '"/InstallDir:C:\Python\"' --version 2.7
+cinst python3 --params '/InstallDir:C:\Python\37-64 /InstallDir32:C:\Python\37-32' --version 3.7.9
+cinst python2 --params '/InstallDir:C:\Python\' --version 2.7.18
 
 # cinst boost-msvc-14.1
 # TODO: this probably does not install the python dependencies
