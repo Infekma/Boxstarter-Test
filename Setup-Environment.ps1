@@ -1,7 +1,7 @@
 Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Latest.txt -DisableReboots
 
 # download the boost setup python script
-$fileUrl = 'https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Test/setup-boost.py'
+$fileUrl = 'https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Boost/Setup-Boost.py'
 $output = "$PSScriptRoot\setup-boost.py"
 (New-Object System.Net.WebClient).DownloadFile($fileUrl, $output)
 
