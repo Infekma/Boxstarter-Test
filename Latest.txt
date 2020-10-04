@@ -1,18 +1,18 @@
 
-# choco install visualstudio2019professional
-# choco install resharper
-# choco install tortoisesvn
-# choco install javaruntime
-# choco install nsis
+# choco upgrade visualstudio2019professional
+# choco upgrade resharper
+# choco upgrade tortoisesvn
+# choco upgrade javaruntime
+# choco upgrade nsis
 # TODO: install Access Control Plugin
 # TODO: install Shell Link Plugin
 
-# choco install boost-msvc-14.1 --dir "C:\boost_build"
+# choco upgrade boost-msvc-14.1 --dir "C:\boost_build"
 
 # installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
-choco install python3 --params='/InstallDir:C:\Python\37-64 /InstallDir32:C:\Python\37-32' --version 3.7.9
-choco install python2 --params='/InstallDir:C:\Python\27-64' --version 2.7.18
-choco install python2 --params='/InstallDir:C:\Python\27-32' --version 2.7.18 --force --forcex86
+choco upgrade python3 --params='/InstallDir:C:\Python\37-64 /InstallDir32:C:\Python\37-32' --version 3.7.9
+choco upgrade python2 --params='/InstallDir:C:\Python\27-64' --version 2.7.18
+choco upgrade python2 --params='/InstallDir:C:\Python\27-32' --version 2.7.18 --force --forcex86
 
-# choco install boost-msvc-14.1
+# choco upgrade boost-msvc-14.1
 # TODO: this probably does not install the python dependencies
