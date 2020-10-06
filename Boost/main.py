@@ -30,7 +30,8 @@ with tempfile.TemporaryDirectory() as temp_dir:
     # now that all the scripts are downloaded, execute the files
     # 1. downloads boost and installs to C:/boost_build
     # 2. sets up boost by running bootstrap and b2 and installs C:/boost
-    exec(open(f"{temp_dir}/download_and_extract_boost.py").read())
-    exec(open(f"{temp_dir}/main_setup_boost.py".read()))
+    with cd(temp_dir): # change python working directory to temp dir
+        exec(open(f"{temp_dir}/download_and_extract_boost.py").read())
+        exec(open(f"{temp_dir}/main_setup_boost.py".read()))
 
     print("Finished executing scripts")
