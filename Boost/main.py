@@ -3,6 +3,20 @@ import tempfile
 import ntpath
 import os
 
+### source: https://stackoverflow.com/a/24176022
+from contextlib import contextmanager
+import os
+
+@contextmanager
+def cd(newdir):
+    prevdir = os.getcwd()
+    os.chdir(os.path.expanduser(newdir))
+    try:
+        yield
+    finally:
+        os.chdir(prevdir)
+###
+        
 # file dependencies, these are other python scripts that need to be downloaded from the github
 file_dependencies = [
     r"https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Boost/download_and_extract_boost.py",
