@@ -7,8 +7,8 @@
 # TODO: install Access Control Plugin
 # TODO: install Shell Link Plugin
 
-# TODO: stop python 2.7 writing to the environmental variables --installarguments should work "PrependPath=0" in native installer
-# installs python 32/64 bit for the latest release (3.x) and python 2.7 for xp support
-choco upgrade python3 --params='/InstallDir:C:\Python\37-64 /InstallDir32:C:\Python\37-32' --version 3.9.0
-choco upgrade python2 --params='/InstallDir:C:\Python\27-64' --version 2.7.18
-choco upgrade python2 --params='/InstallDir:C:\Python\27-32' --version 2.7.18 --force --forcex86
+# TODO: stop python2 writing to the environmental variables --installarguments should work "PrependPath=0" in native installer
+# installs python 32/64 bit for the latest release for python 3.x and python 2.x for xp support
+choco upgrade python3 --params='/InstallDir:C:\Python\3-64 /InstallDir32:C:\Python\3-32' --version 3.9.0
+choco upgrade python2 --params='/InstallDir:C:\Python\2-64' --version 2.7.18
+choco upgrade python2 --params='/InstallDir:C:\Python\2-32' --version 2.7.18 --force --forcex86

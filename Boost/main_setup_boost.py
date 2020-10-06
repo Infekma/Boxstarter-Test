@@ -50,11 +50,11 @@ output_dir = r"C:\boost"
 # run the bootstrap.bat to build the b2 executable
 os.system(f"{build_dir}\bootstrap.bat")
 
-# TODO: this can be improved probably
-build_boost(build_dir, output_dir, 3.7, "C:/Python/37-64", 64)
-build_boost(build_dir, output_dir, 3.7, "C:/Python/37-32", 32)
-build_boost(build_dir, output_dir, 2.7, "C:/Python/27-64", 64)
-build_boost(build_dir, output_dir, 2.7, "C:/Python/27-32", 32)
+# TODO: this can be improved probably, i.e. not having hardcoded python versions
+build_boost(build_dir, output_dir, 3.9, "C:/Python/3-64", 64)
+build_boost(build_dir, output_dir, 3.9, "C:/Python/3-32", 32)
+build_boost(build_dir, output_dir, 2.7, "C:/Python/2-64", 64)
+build_boost(build_dir, output_dir, 2.7, "C:/Python/2-32", 32)
 
 # add "BOOST_ROOT_DIR" environmental variable and point to our boots output directory
 os.environ['BOOST_ROOT_DIR'] = output_dir
