@@ -3,20 +3,6 @@ import tempfile
 import ntpath
 import os
 
-### source: https://stackoverflow.com/a/24176022
-from contextlib import contextmanager
-import os
-
-@contextmanager
-def cd(newdir):
-    prevdir = os.getcwd()
-    os.chdir(os.path.expanduser(newdir))
-    try:
-        yield
-    finally:
-        os.chdir(prevdir)
-###
-        
 # file dependencies, these are other python scripts that need to be downloaded from the github
 file_dependencies = [
     r"https://raw.githubusercontent.com/Infekma/Boxstarter-Test/main/Boost/download_and_extract_boost.py",
@@ -44,8 +30,7 @@ with tempfile.TemporaryDirectory() as temp_dir:
     # now that all the scripts are downloaded, execute the files
     # 1. downloads boost and installs to C:/boost_build
     # 2. sets up boost by running bootstrap and b2 and installs C:/boost
-    with cd(temp_dir): # change python working directory to temp dir
-        exec(open(f"{temp_dir}/download_and_extract_boost.py").read())
-        exec(open(f"{temp_dir}/main_setup_boost.py".read()))
+    exec(open(f"{temp_dir}/download_and_extract_boost.py").read())
+    exec(open(f"{temp_dir}/main_setup_boost.py".read()))
 
     print("Finished executing scripts")
