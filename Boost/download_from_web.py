@@ -1,11 +1,14 @@
-# depdency: pip install requests
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        
+install_package("requests") # install request module dependency
+        
+# dependency: pip install requests
 import requests
 import subprocess
 import sys
 
-def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-    
+
 # Source & Credit: https://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
@@ -30,7 +33,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         print()
 
 def download_file(download_url, output_dir):
-    install_package("requests") # install request module dependency
+
     print(f"downloading file from {download_url}")
     file_stream = requests.get(download_url, stream=True)
     with open(output_dir, 'wb') as local_file:
