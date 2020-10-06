@@ -11,8 +11,9 @@
 # installs python 32/64 bit for the latest release for python 3.x and python 2.x for xp support
 choco upgrade python3 --params='/InstallDir:C:\Python\3-64 /InstallDir32:C:\Python\3-32' --version 3.9.0
 
+# Source: https://stackoverflow.com/questions/714877/setting-windows-powershell-environment-variables
 # save the PATH at this point so we can recover it after the python installation
-$SavedPath = [Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
+$SavedPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 	 
 choco upgrade python2 --params='/InstallDir:C:\Python\2-64' --version 2.7.18
 choco upgrade python2 --params='/InstallDir:C:\Python\2-32' --version 2.7.18 --force --forcex86
