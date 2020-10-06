@@ -1,4 +1,4 @@
-import download_from_web
+from . import download_from_web
 import zipfile
 import os
 import tempfile
