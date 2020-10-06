@@ -1,5 +1,5 @@
 
-# choco upgrade visualstudio2019professional
+choco upgrade visualstudio2019professional
 # choco upgrade resharper
 # choco upgrade tortoisesvn
 # choco upgrade javaruntime
