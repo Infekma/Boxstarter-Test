@@ -1,3 +1,6 @@
+import subprocess
+import sys
+
 def install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
         
@@ -5,8 +8,7 @@ install_package("requests") # install request module dependency
         
 # dependency: pip install requests
 import requests
-import subprocess
-import sys
+
 
 
 # Source & Credit: https://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
