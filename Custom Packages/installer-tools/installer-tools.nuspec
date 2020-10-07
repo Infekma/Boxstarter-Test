@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>installer-tools</id>
+    <title>Installer tools</title>
+    <version>1.0</version>
+    <authors>Alex Dos Santos</authors>
+    <owners>Vertual Ltd</owners>
+    <description>This package contains the tools required to build installers</description>
+ </metadata>
+<dependencies>
+    <dependency id="nsis" version="3.06.1" include="contentFiles, build" />
+</dependencies>
+<files>
+  <file src="tools\**" target="tools" />
+</files>
+</package>
